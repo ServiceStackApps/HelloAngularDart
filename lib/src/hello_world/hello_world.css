@@ -1,3 +1,10 @@
-div {
-  color: teal;
+button {
+  font-size: 20px;
+}
+
+#result {
+  margin-top:10px;
+  width:500px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
