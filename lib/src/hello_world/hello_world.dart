@@ -19,7 +19,7 @@ import '../dtos/techstacks.dtos.dart';
 )
 class HelloWorldComponent {
   var result = "";
-  var imageSrc = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="; //= 1x1 transparent pixel
+  var imageSrc = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="; // 1x1 pixel
   static const TestBaseUrl = "http://test.servicestack.net";
   static const TechStacksBaseUrl = "https://www.techstacks.io";
   var testClient = new JsonWebClient(TestBaseUrl);
