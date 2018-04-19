@@ -2,6 +2,10 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
+import 'dart:html';
+import 'dart:typed_data';
+import 'dart:convert';
+
 import 'package:angular/angular.dart';
 import 'package:servicestack/client.dart';
 import 'package:servicestack/web_client.dart';
@@ -16,6 +20,7 @@ import '../dtos/techstacks.dtos.dart';
 )
 class HelloWorldComponent {
   var result = "";
+  var imageSrc = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="; //= 1x1 transparent pixel
   static const TestBaseUrl = "http://test.servicestack.net";
   static const TechStacksBaseUrl = "https://www.techstacks.io";
   var testClient = new JsonWebClient(TestBaseUrl);
@@ -57,5 +62,17 @@ class HelloWorldComponent {
     var requests = ['foo', 'bar', 'qux'].map((name) => new Hello(name: name));
     var responses = await testClient.sendAll(requests);
     result = "Batch Responses:\n${responses.map((r) => r.result).join('\n')}";
+  }
+
+  doImage() async {
+    Uint8List bytes = await testClient.get(new HelloImage(
+        name: "Flutter",
+        fontFamily: "Roboto",
+        background: "#0091EA",
+        width: 500,
+        height: 170));
+
+    result = "";
+    imageSrc = "data:image/png;base64," + base64.encode(bytes);
   }
 }
