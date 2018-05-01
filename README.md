@@ -1,5 +1,7 @@
 # Hello AngularDart
 
+AngularDart App utilizing [ServiceStack's native support for Dart](http://docs.servicestack.net/dart-add-servicestack-reference).
+
 The [HelloAngularDart](https://github.com/ServiceStackApps/HelloAngularDart) project demonstrates the same functionality [as Hello Flutter](https://github.com/ServiceStackApps/HelloFlutter) in an AngularDart Web App running inside a Web Browser.
 
 The only difference [with Hello Flutter](https://github.com/ServiceStackApps/HelloFlutter) is having to also import `web_client.dart` containing the `JsonWebClient`:
