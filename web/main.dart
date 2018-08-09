@@ -5,7 +5,7 @@
 import 'package:angular/angular.dart';
 
 // ignore: uri_has_not_been_generated
-import 'package:webdev_example_app/app_component.template.dart' as ng;
+import 'package:hello_angular_dart/app_component.template.dart' as ng;
 
 main() {
   // ignore: argument_type_not_assignable

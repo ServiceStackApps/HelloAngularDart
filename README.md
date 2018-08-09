@@ -1,13 +1,20 @@
 # Hello AngularDart
 
-AngularDart App utilizing [ServiceStack's native support for Dart](http://docs.servicestack.net/dart-add-servicestack-reference).
+[AngularDart](https://webdev.dartlang.org/angular) App utilizing [ServiceStack's native support for Dart](http://docs.servicestack.net/dart-add-servicestack-reference) and [AngularDart Components](https://webdev.dartlang.org/components).
 
 The [HelloAngularDart](https://github.com/ServiceStackApps/HelloAngularDart) project demonstrates the same functionality [as Hello Flutter](https://github.com/ServiceStackApps/HelloFlutter) in an AngularDart Web App running inside a Web Browser.
 
-The only difference [with Hello Flutter](https://github.com/ServiceStackApps/HelloFlutter) is having to also import `web_client.dart` containing the `JsonWebClient`:
+The only difference [with Hello Flutter](https://github.com/ServiceStackApps/HelloFlutter) is having to add the `servicestack_web` package:
+
+```yaml
+dependencies:
+  servicestack_web: ^0.0.2
+```
+
+to import `servicestack_web/client.dart` containing the `JsonWebClient`:
 
 ```dart
-import 'package:servicestack/web_client.dart';
+import 'package:servicestack_web/client.dart';
 ```
 
 and changing the clients to use the `JsonWebClient` instead, e.g:
@@ -19,6 +26,20 @@ var techstacksClient = new JsonWebClient(TechStacksBaseUrl);
 
 But otherwise the actual client source code for all of the Typed API requests remains exactly the same. 
 
+## Run
+
+Follow the [AngularDart guide](https://webdev.dartlang.org/angular/guide/setup#run-the-app) to learn about developing AngularDart Web Apps.
+
+After cloning this project run `pub get` to install all the App's dependencies:
+
+    $ pub get
+
+Then run `webdev serve` to start a watched live reload of the App which you can customize and see changes in real-time:
+
+    $ webdev serve
+
+### Description
+
 The `HelloAngularDart` App is contained within the [hello_world](https://github.com/ServiceStackApps/HelloAngularDart/tree/master/lib/src/hello_world) component with all Dart logic in:
 
 #### [hello_world.dart](https://github.com/ServiceStackApps/HelloAngularDart/blob/master/lib/src/hello_world/hello_world.dart)
@@ -28,8 +49,8 @@ import 'dart:typed_data';
 import 'dart:convert';
 
 import 'package:angular/angular.dart';
-import 'package:servicestack/client.dart';
-import 'package:servicestack/web_client.dart';
+import 'package:servicestack/servicestack.dart';
+import 'package:servicestack/web.dart';
 
 import '../dtos/test.dtos.dart';
 import '../dtos/techstacks.dtos.dart';

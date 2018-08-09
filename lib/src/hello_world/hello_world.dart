@@ -7,7 +7,7 @@ import 'dart:convert';
 
 import 'package:angular/angular.dart';
 import 'package:servicestack/client.dart';
-import 'package:servicestack/web_client.dart';
+import 'package:servicestack_web/client.dart';
 
 import '../dtos/test.dtos.dart';
 import '../dtos/techstacks.dtos.dart';
