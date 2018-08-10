@@ -11,10 +11,10 @@ BaseUrl: http://test.servicestack.net
 //AddDescriptionAsComments: True
 //IncludeTypes: 
 //ExcludeTypes: 
-//DefaultImports: package:servicestack/client.dart,dart:collection,dart:typed_data
+//DefaultImports: package:servicestack/servicestack.dart,dart:collection,dart:typed_data
 */
 
-import 'package:servicestack/client.dart';
+import 'package:servicestack/servicestack.dart';
 import 'dart:collection';
 import 'dart:typed_data';
 
