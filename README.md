@@ -4,17 +4,21 @@
 
 The [HelloAngularDart](https://github.com/ServiceStackApps/HelloAngularDart) project demonstrates the same functionality [as Hello Flutter](https://github.com/ServiceStackApps/HelloFlutter) in an AngularDart Web App running inside a Web Browser.
 
-The only difference [with Hello Flutter](https://github.com/ServiceStackApps/HelloFlutter) is having to add the `servicestack_web` package:
+
+To get started add the `servicestack` dependency to your apps [pubspec.yaml](https://github.com/ServiceStackApps/HelloAngularDart/blob/master/pubspec.yaml):
 
 ```yaml
 dependencies:
-  servicestack_web: ^0.0.2
+  servicestack: ^1.0.5
 ```
 
-to import `servicestack_web/client.dart` containing the `JsonWebClient`:
+Saving `pubspec.yaml` automatically runs [pub get](https://www.dartlang.org/tools/pub/cmd/pub-get) to install any new dependencies in your App. 
+
+
+The only difference [with Hello Flutter](https://github.com/ServiceStackApps/HelloFlutter) is importing `servicestack/web_client.dart` containing the `JsonWebClient`:
 
 ```dart
-import 'package:servicestack_web/client.dart';
+import 'package:servicestack/web_client.dart';
 ```
 
 and changing the clients to use the `JsonWebClient` instead, e.g:
@@ -49,8 +53,7 @@ import 'dart:typed_data';
 import 'dart:convert';
 
 import 'package:angular/angular.dart';
-import 'package:servicestack/servicestack.dart';
-import 'package:servicestack/web.dart';
+import 'package:servicestack/web_client.dart';
 
 import '../dtos/test.dtos.dart';
 import '../dtos/techstacks.dtos.dart';
