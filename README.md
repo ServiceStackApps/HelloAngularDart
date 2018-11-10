@@ -9,7 +9,7 @@ To get started add the `servicestack` dependency to your apps [pubspec.yaml](htt
 
 ```yaml
 dependencies:
-  servicestack: ^1.0.5
+  servicestack: ^1.0.8
 ```
 
 Saving `pubspec.yaml` automatically runs [pub get](https://www.dartlang.org/tools/pub/cmd/pub-get) to install any new dependencies in your App. 
